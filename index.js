@@ -31,4 +31,4 @@ client.on('messageCreate', async (message) => {
 });
 
 //borrar token al commitear
-client.login('OTY3MTA4NDc4MzQwNTkxNjQ3.YmLf9Q.UZsIgSafKTnUWXwCfTaL3LLq_1o');
+client.login('');
