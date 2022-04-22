@@ -1,4 +1,5 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
+const { token } = require('./token');
 //definiendo permisos del bot
 const intents = new Discord.Intents(131071);
 //creando cliente
@@ -31,4 +32,4 @@ client.on('messageCreate', async (message) => {
 });
 
 //borrar token al commitear
-client.login('');
+client.login(token());
