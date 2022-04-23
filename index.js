@@ -31,5 +31,5 @@ client.on('messageCreate', async (message) => {
   }
 });
 
-//borrar token al commitear
+//solucion de token al commitear
 client.login(token());
