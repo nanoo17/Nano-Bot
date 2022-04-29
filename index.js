@@ -29,7 +29,7 @@ client.on('messageCreate', async (message) => {
   //condicionando que los mensajes comiencen con el prefijo
   if (!message.content.startsWith(prefix)) return;
   //definiendo argumentos separados por espacios
-  const args = message.content.slice(prefix.length).trim().split(/ +/g); // Definimos args. Explicado en el video
+  const args = message.content.slice(prefix.length).trim().split(/ +/g); // Definimos argumentos
   //definiendo comandos, serán las palabras siguientes al prefijo sin ningun espacio
   const command = args.shift().toLowerCase()
   //comandos
