@@ -1,6 +1,7 @@
 const { respuestaPing } = require('./comandos/ping');
 const { respuestaHola } = require('./comandos/hola');
 const { respuestaHelp } = require('./comandos/help');
+const { meMide } = require('./comandos/mide');
 const mundial = require('./comandos/mundial');
 const Discord = require('discord.js');
 const cron = require('node-cron');
@@ -45,7 +46,7 @@ client.on('messageCreate', async (message) => {
     message.channel.send(mundial.funcionDia());
   }
   if (command === "memide") {
-
+    meMide(message);
   }
 });
 
