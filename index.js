@@ -1,6 +1,7 @@
 const { respuestaPing } = require('./comandos/ping');
 const { respuestaHola } = require('./comandos/hola');
 const { respuestaHelp } = require('./comandos/help');
+const mundial = require('./comandos/mundial');
 const Discord = require('discord.js');
 const { token } = require('./token');
 //definiendo permisos del bot
@@ -34,6 +35,9 @@ client.on('messageCreate', async (message) => {
   }
   if (command === "help") {
     respuestaHelp(message);
+  }
+  if (command === "qatar") {
+    message.reply(mundial.funcionDia());
   }
 });
 
