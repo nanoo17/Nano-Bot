@@ -3,16 +3,21 @@ const { respuestaHola } = require('./comandos/hola');
 const { respuestaHelp } = require('./comandos/help');
 const mundial = require('./comandos/mundial');
 const Discord = require('discord.js');
-const { token } = require('./token');
+const cron = require('node-cron');
+const { token, canalGeneral } = require('./token');
 //definiendo permisos del bot
 const intents = new Discord.Intents(131071);
 //creando cliente
 const client = new Discord.Client({ intents });
-
 client.on('ready', () => {
   console.log(`Bot Logueado! ${client.user.tag}!`);
+  //canal general
+  const canal = client.channels.cache.get(canalGeneral());
+  //cron para mandar el mensaje todos los dias
+  cron.schedule('00 00 12 * * 0-6', () => {
+    canal.send(mundial.funcionDia());
+  });
 });
-
 client.on('messageCreate', async (message) => {
   //el bot no responderá mensajes privados
   if (message.channel.type === 'DM') return;
@@ -37,7 +42,10 @@ client.on('messageCreate', async (message) => {
     respuestaHelp(message);
   }
   if (command === "qatar") {
-    message.reply(mundial.funcionDia());
+    message.channel.send(mundial.funcionDia());
+  }
+  if (command === "memide") {
+
   }
 });
 

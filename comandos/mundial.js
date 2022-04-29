@@ -1,9 +1,3 @@
-// const funcionDia = () => {
-//   let today = new Date();
-//   let months = [`January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November`, `December`];
-//   let suffix = [`st`, `nd`, `rd`];
-//   return `${today.getDate()}${suffix[today.getDate()] || `th`} of ${months[today.getMonth()]}`;
-// }
 const funcionDia = () => {
   let fechaHoy = Date.now();
   let hoy = new Date(fechaHoy).getTime();
