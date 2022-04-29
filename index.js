@@ -1,3 +1,6 @@
+const { respuestaPing } = require('./comandos/ping');
+const { respuestaHola } = require('./comandos/hola');
+const { respuestaHelp } = require('./comandos/help');
 const Discord = require('discord.js');
 const { token } = require('./token');
 //definiendo permisos del bot
@@ -21,13 +24,16 @@ client.on('messageCreate', async (message) => {
   //definiendo argumentos separados por espacios
   const args = message.content.slice(prefix.length).trim().split(/ +/g); // Definimos args. Explicado en el video
   //definiendo comandos, serán las palabras siguientes al prefijo sin ningun espacio
-  const command = args.shift().toLowerCase() // Definimos command, tambien explicado en el video
-  //comando ping
+  const command = args.shift().toLowerCase()
+  //comandos
   if (command === "ping") {
-    message.reply("Pingo!")
+    respuestaPing(message);
   }
   if (command === "hola") {
-    message.reply("Hola que tal!")
+    respuestaHola(message);
+  }
+  if (command === "help") {
+    respuestaHelp(message);
   }
 });
 
